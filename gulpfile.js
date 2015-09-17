@@ -22,55 +22,56 @@ var xto6 = require('gulp-xto6');
 \*\ ================================ /*/
 // Stylus
 gulp.task('stylus', function() {
-    var files = ['./src/stylus/*.stylus'];
-    gulp.src(files)
-        .pipe(plumber()) // error時にwatchを止めないやつ
-        .pipe(stylus('style.css'))
-        .pipe(gulp.dest('./main/css'));
+	var files = ['./src/stylus/*.stylus'];
+	gulp.src(files)
+		.pipe(plumber()) // error時にwatchを止めないやつ
+		.pipe(stylus('style.css'))
+		.pipe(gulp.dest('./main/css'));
 });
 
 // Babel
 gulp.task('babel', function() {
-    var files = ['./src/js_es6/*.js'];
-    gulp.src(files)
-        .pipe(plumber())
-        .pipe(babel())
-        .pipe(gulp.dest('./src/dist/js'));
+	var files = ['./src/es6/*.js'];
+	gulp.src(files)
+		.pipe(plumber())
+		.pipe(babel())
+		.pipe(gulp.dest('./src/dist/js'));
 });
 
 // browserify
-gulp.task('browserify', function(){
-    gulp.src('./src/dist/js/main.js')
-    .pipe(through2.obj(function(file, encode, callback){
-        browserify(file.path)
-        .bundle(function(err, res){
-            file.contents = res;
-            callback(null, file)
-        });
-    }))
-    .pipe(gulp.dest('./main/js'));
+gulp.task('browserify', function() {
+	gulp.src('./src/dist/js/main.js')
+		.pipe(through2.obj(function(file, encode, callback) {
+			browserify(file.path)
+				.bundle(function(err, res) {
+					file.contents = res;
+					callback(null, file)
+				});
+		}))
+		.pipe(gulp.dest('./main/js'));
 });
 
 // Concat
 /*gulp.task('concat', function() {
-    var files = ['./src/js/*.js'];
-    gulp.src(files)
-        .pipe(plumber())
-        .pipe(concat('particles.js'))
-        .pipe(gulp.dest('./test/js'));
+	var files = ['./src/js/*.js'];
+	gulp.src(files)
+		.pipe(plumber())
+		.pipe(concat('particles.js'))
+		.pipe(gulp.dest('./test/js'));
 });*/
 
 // Xto6
-gulp.task('xto', function() {
-    return gulp.src('./########')
-        .pipe(xto6())
-        .pipe(gulp.dest('./########'));
-});
+/*gulp.task('xto', function() {
+	return gulp.src('./########')
+		.pipe(xto6())
+		.pipe(gulp.dest('./########'));
+});*/
 
 /*/ ================================ \*\
 |*| DEFAULT TASK (WATCH)
 \*\ ================================ /*/
 gulp.task('default', function() {
-    var watch_files = ['./src/**/*.js', './src/**/*.stylus'];
-    gulp.watch(watch_files, ['stylus', 'babel', 'browserify']);
+	gulp.watch('./src/stylus/**/*stylus', ['stylus']);
+	gulp.watch('./src/es6/**/*js', ['babel']);
+	gulp.watch('./src/dist/js/**/*js', ['browserify']);
 });

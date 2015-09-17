@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>mov test</title>
+	<style type="text/css">
+	#v {
+		display: none;
+	}
+	
+	#c {
+		display: none;
+	}
+	
+	button {
+		color: #FFF;
+		width: 100px;
+		height: 30px;
+		background: #39F;
+		position: relative;
+		left: 100px;
+		bottom: 0;
+	}
+	</style>
+	<script type="text/javascript">
+	function playVideo() {
+		document.getElementById("v").style.display = "block";
+
+		var video = document.getElementById("v");
+		if (video.paused) {
+			video.play();
+		} else {
+			video.pause();
+		}
+		setInterval(function() {
+			var canvas = document.getElementById("c");
+			canvas.getContext("2d").drawImage(video, 0, 0, 480, 270);
+		}, 1000 / 30);
+
+
+	}
+
+	function restart() {
+		var video = document.getElementById("v");
+		video.currentTime = 0;
+	}
+	</script>
+</head>
+
+<body>
+	<video controls id="v">
+		<source src="mov/sample.mp4">
+	</video>
+	<canvas id="c" width="480px" height="270px"></canvas>
+	<div>
+		<button onClick="playVideo()">次へ</button>
+		<button onClick="restart()">知らん。</button>
+	</div>
+</body>
+
+</html>
