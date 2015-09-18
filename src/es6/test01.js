@@ -18,6 +18,7 @@ for (var i = 0; i < max; i++) {
 };
 */
 
+/*
 function* arrayA() { // ジェネレータ関数
 	[symbol.iterator]() {
 		let prev = 0;
@@ -34,3 +35,4 @@ for (let n of arrayA()) {
 		break;
 	console.log(n);
 }
+*/

@@ -22,7 +22,7 @@ var xto6 = require('gulp-xto6');
 \*\ ================================ /*/
 // Stylus
 gulp.task('stylus', function() {
-	var files = ['./src/stylus/**/*.stylus'];
+	var files = ['./src/stylus/main.stylus'];
 	gulp.src(files)
 		.pipe(plumber()) // error時にwatchを止めないやつ
 		.pipe(stylus('main.css'))
@@ -49,7 +49,7 @@ gulp.task('babel', function() {
 
 // browserify
 gulp.task('browserify', function() {
-	gulp.src('./src/dist/js/main.js')
+	gulp.src('./src/dist/js/*.js')
 		.pipe(through2.obj(function(file, encode, callback) {
 			browserify(file.path)
 				.bundle(function(err, res) {

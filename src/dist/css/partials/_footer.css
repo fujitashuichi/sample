@@ -1,0 +1,23 @@
+.foot {
+  width: 75%;
+  min-height: 100px;
+}
+.foot button {
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  background: #39f;
+  position: relative;
+  left: 100px;
+  bottom: 0;
+}
+.foot .ani-box {
+  width: 65%;
+  margin: 0 auto;
+}
+.foot .prev {
+  float: left;
+}
+.foot .next {
+  float: right;
+}
