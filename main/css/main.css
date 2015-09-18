@@ -17,11 +17,20 @@ main {
   width: 72%;
   margin: 0 auto;
 }
-main #c {
+#v {
   display: none;
-  background: bg;
-  margin: 0 auto;
-  overflow: hidden;
+}
+#c {
+  display: none;
+}
+button {
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  background: #39f;
+  position: relative;
+  left: 100px;
+  bottom: 0;
 }
 
 * {

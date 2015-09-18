@@ -80,7 +80,8 @@ gulp.task('browserify', function() {
 |*| DEFAULT TASK (WATCH)
 \*\ ================================ /*/
 gulp.task('default', function() {
-	gulp.watch('./src/stylus/**/*stylus', ['stylus']);
-	gulp.watch('./src/es6/**/*js', ['babel']);
-	gulp.watch('./src/dist/js/**/*js', ['browserify']);
+	gulp.watch('./src/stylus/**/*.stylus', ['stylus']);
+	gulp.watch('./src/dist/css/**/*.css', ['concat']);
+	gulp.watch('./src/es6/**/*.js', ['babel']);
+	gulp.watch('./src/dist/js/**/*.js', ['browserify']);
 });

@@ -5,9 +5,15 @@ main
 	margin 0 auto
 	section 
 		padding(32px)
-	#c
-			display none
-			background bg
-			margin 0 auto
-			overflow hidden
-
+#v
+	display none
+#c
+	display none
+button
+	color #FFF
+	width 100px
+	height 30px
+	background #39F
+	position relative
+	left 100px
+	bottom 0
