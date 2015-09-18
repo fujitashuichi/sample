@@ -22,10 +22,19 @@ var xto6 = require('gulp-xto6');
 \*\ ================================ /*/
 // Stylus
 gulp.task('stylus', function() {
-	var files = ['./src/stylus/*.stylus'];
+	var files = ['./src/stylus/**/*.stylus'];
 	gulp.src(files)
 		.pipe(plumber()) // error時にwatchを止めないやつ
-		.pipe(stylus('style.css'))
+		.pipe(stylus('main.css'))
+		.pipe(gulp.dest('./src/dist/css'));
+});
+
+// Concat
+gulp.task('concat', function() {
+	var files = ['./src/dist/css/**/*.css'];
+	gulp.src(files)
+		.pipe(plumber())
+		.pipe(concat('main.css'))
 		.pipe(gulp.dest('./main/css'));
 });
 

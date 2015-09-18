@@ -1,0 +1,26 @@
+//test stylus file
+
+testColor = #FFFFFF
+wid = 640px
+hei = 420px
+
+
+.test
+	color testColor
+	width 10px + 16px
+	
+.test2
+	aa = 64px
+	&:hover
+		width aa
+
+#cvs
+	width wid
+	height hei
+	
+
+// @import 'mixins/mixins'
+// @import 'partials/default'
+// @import 'partials/header'
+// @import 'partials/body'
+// @import 'partials/footer'

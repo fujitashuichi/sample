@@ -1,0 +1,41 @@
+.test {
+  color: #fff;
+  width: 26px;
+}
+.test2:hover {
+  width: 64px;
+}
+#cvs {
+  width: 640px;
+  height: 420px;
+}
+
+@charset "UTF-8";
+
+main {
+  min-height: 720px;
+  width: 72%;
+  margin: 0 auto;
+}
+main #c {
+  display: none;
+  background: bg;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+* {
+  color: fc;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+body {
+  background: bg;
+}
+img {
+  outline: none;
+}
+
+

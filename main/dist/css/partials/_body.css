@@ -1,0 +1,11 @@
+main {
+  min-height: 720px;
+  width: 72%;
+  margin: 0 auto;
+}
+main #c {
+  display: none;
+  background: bg;
+  margin: 0 auto;
+  overflow: hidden;
+}
