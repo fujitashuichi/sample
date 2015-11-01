@@ -35,4 +35,5 @@ for (let n of arrayA()) {
 		break;
 	console.log(n);
 }
+// なんやこれ
 */
