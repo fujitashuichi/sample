@@ -1,9 +1,0 @@
-
-.main
-	min-height 500px
-	border(solid)
-
-#v
-	display none
-#c
-	display block

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>SAMPLE</title>
+	<style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+	* {
+		background: #000;
+		color: #CCC;
+		font-weight: lighter;
+		letter-spacing: 0;
+		text-decoration: none;
+		font-family: 'Source Code Pro', Monaco, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	}
+	
+	form {
+		display: block;
+	}
+	
+	a {
+		color: #0F6;
+	}
+	
+	a:hover {
+		color: #F06;
+	}
+	</style>
+	<script type="text/javascript" src="js/sample.js"></script>
+	<script type="text/javascript" src="js/calculator.js"></script>
+</head>
+
+<body>
+	<section>
+		<div> EVENT LISTENER</div>
+		<input type="button" id="btn-0001" value="Event button"></input>
+		<div id="event-0003"></div>
+	</section>
+	<section>
+		<div> REMOVE NODE</div>
+		<ul>
+			<li><a href="#" onclick="showBook(this, '01', 'F00')">sample image 01</a></li>
+			<li><a href="#" onclick="showBook(this, '02', '0FF')">sample image 02</a></li>
+			<li><a href="#" onclick="showBook(this, '03', '0F0')">sample image 03</a></li>
+			<li><a href="#" onclick="showBook(this, '04', 'FF0')">sample image 04</a></li>
+		</ul>
+		<input type="button" id="delete-book-btn" value="Unshow" disabled="disabled" onclick="deleteBook()">
+		<div id="show-result">Art work of book --> </div>
+		<div> ADD NODE</div>
+		<form>
+			<span>Link name:</span>
+			<input type="text" name="linkname" />
+			<span>URL:</span>
+			<input type="text" name="linkurl" />
+			<input type="button" value="Add link" onclick="addNode(this.form)">
+		</form>
+		<div id="added-links">links add this space.</div>
+		<div> GETTING ID, CLASS, NAME...</div>
+		<form id="testform05" name="testform05">
+			<div id="getting-id-result">Display result here.</div>
+			<input id="inputname" type="text" name="inputname">
+			<input type="button" value="Click me!" onclick="gettingIdBtn()" />
+			<ul class="test-list">
+				<li class="list-text" name="test-list-01">test list 01</li>
+				<li class="list-text" name="test-list-02">test list 02</li>
+				<li class="list-text" name="test-list-03">test list 03</li>
+				<li class="list-text" name="test-list-04">test list 04</li>
+			</ul>
+			<div id="list-result">Display list text here.</div>
+			<input type="button" class="getting-list-val" onclick="gettingClassBtn()" value="get lists value">
+		</form>
+		<div> SELECTBOX</div>
+		<form name="testform04" onsubmit="alertSelect()">
+			<span>Where are you from?:</span>
+			<select id="select-country">
+				<option value="Japan">Japan</option>
+				<option value="America">America</option>
+				<option value="France">France</option>
+			</select>
+			<input type="submit" value="Check!">
+		</form>
+		<div> IMPUT AND CHECKING TEXT</div>
+		<form name="testform03" method="POST" action="" onsubmit="checkInput()">
+			<span>Input text!:</span>
+			<input type="text" name="howold" value="25" />
+			<input type="submit" value="Check!">
+		</form>
+		<div> CHECKBOX AND RADIO BUTTON</div>
+		<form name="testform02">
+			<!-- checkbox button -->
+			<span>Can you answer this question?</span>
+			<input type="checkbox" name="need" value="1" checked="checked" onclick="initRadioBtn()" />
+			<br/>
+			<span>what's like? -> [</span>
+			<span>Meat:</span>
+			<input type="checkbox" name="fmt" value="Meat" />
+			<span>Fish:</span>
+			<input type="checkbox" name="fmt" value="Fish" />
+			<span>Vegitable:</span>
+			<input type="checkbox" name="fmt" value="Vegitable" />
+			<span>Fruits:</span>
+			<input type="checkbox" name="fmt" value="Fruits" />
+			<span>]</span>
+			<input type="button" name="sendradio" value="Send radio" onclick="sendRadioBtn()" />
+		</form>
+		<div> FIRST SAMPLE</div>
+		<form name="testform01">
+			<!-- test input -->
+			<input type="text" name="name" />
+			<input type="button" value="Send" onclick="onInput(this.form)" />
+		</form>
+	</section>
+	<!-- calculator -->
+	<section class="calculator">
+		<form name="calculatorForm">
+			<table border="1" bgcolor="#333">
+				<tr>
+					<td align="center" colspan="4" bgcolor="#CCC">CALCULATOR</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="text" size="12" name="displayLine" value="0">
+					</td>
+					<td align="center">
+						<input type="button" value="Ｃ" onclick="isC()">
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="button" value=" ７ " onclick="isValue(7)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ８ " onclick="isValue(8)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ９ " onclick="isValue(9)">
+					</td>
+					<td align="center">
+						<input type="button" value="÷" onclick="isCalculate('/')">
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="button" value=" ４ " onclick="isValue(4)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ５ " onclick="isValue(5)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ６ " onclick="isValue(6)">
+					</td>
+					<td align="center">
+						<input type="button" value="×" onclick="isCalculate('*')">
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="button" value=" １ " onclick="isValue(1)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ２ " onclick="isValue(2)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ３ " onclick="isValue(3)">
+					</td>
+					<td align="center">
+						<input type="button" value="－" onclick="isCalculate('-')">
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="button" value=" ０ " onclick="isValue(0)">
+					</td>
+					<td align="center">
+						<input type="button" value=" ・ " onclick="isValue('.')">
+					</td>
+					<td align="center">
+						<input type="button" value=" ＋ " onclick="isCalculate('+')">
+					</td>
+					<td align="center">
+						<input type="button" value="＝" onclick="isCalculate('=')">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+
+</html>

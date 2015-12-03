@@ -1,4 +1,0 @@
-//test stylus file
-
-@import 'mixins/*'
-@import 'partials/*.stylus'
