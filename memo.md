@@ -1,6 +1,24 @@
 # js sample
 
 ## memo
+```ruby
+def sample
+	text = "text text"
+end
+
+puts sample
+```
+
+``` python
+text = "sample"
+print text
+```
+
+```javascript
+let text = "text";
+
+console.log(text);
+```
 
 ---
 
